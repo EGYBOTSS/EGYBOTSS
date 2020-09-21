@@ -7108,7 +7108,7 @@ database:set(bot_id.."EGYBOTSS:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.."EGYBOTSS:brj_Bots"..msg.chat_id_) == "open" then
 local Textbrj = text:match("^برج (.*)$")
-gk = https.request('https://forhassan.ml/black/br.php?br='..URL.escape(Textbrj)..'')
+gk = https.request('https://forhassan.ml/black/abraj.php?br='..URL.escape(Textbrj)..'')
 br = JSON.decode(gk)
 i = 0
 for k,v in pairs(br.ok) do
