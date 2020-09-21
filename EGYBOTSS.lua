@@ -7322,7 +7322,7 @@ t = "*⌔︙ بالتاكيد تم تنزيل وتفعيل ملف » {"..file.."
 else
 t = "*⌔︙ الملف » {"..file.."}\n⌔︙ تم تنزيله وتفعيله بنجاح \n*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/EGYBOTSS/files_EGYBOTSS/master/files_EGYBOTSS/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/EGYBOTSS/files_EGfiles_EGYBOTSSYBOTSS/master/files_EGYBOTSS/"..file)
 if res == 200 then
 local chek = io.open("EGYBOTSS_Files/"..file,'w+')
 chek:write(json_file)
@@ -7370,7 +7370,7 @@ database:del(bot_id..'EGYBOTSS:Set:Text_Dev'..msg.chat_id_)
 send(msg.chat_id_,msg.id_,'⌔︙تم حفظ كليشة المطور')
 return false
 end
-if text == 'رفع النسخه الاحتياطيه' and DevEGYBOTSS(msg) then   
+if text == 'رفع نسخه الاحتياطيه' and DevEGYBOTSS(msg) then   
 if tonumber(msg.reply_to_message_id_) > 0 then
 function by_reply(extra, result, success)   
 if result.content_.document_ then 
