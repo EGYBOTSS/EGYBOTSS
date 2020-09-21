@@ -7088,7 +7088,7 @@ database:set(bot_id.."EGYBOTSS:zhrf_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^زخرفه (.*)$") and database:get(bot_id.."EGYBOTSS:zhrf_Bots"..msg.chat_id_) == "open" then
 local TextZhrfa = text:match("^زخرفه (.*)$")
-zh = https.request('https://forhassan.ml/EGY/hso.php?en='..URL.escape(TextZhrfa)..'')
+zh = https.request('https://forhassan.ml/Black/hso.php?en='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
 t = "\n⌔️︙قائمه الزخرفه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 i = 0
@@ -7108,7 +7108,7 @@ database:set(bot_id.."EGYBOTSS:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.."EGYBOTSS:brj_Bots"..msg.chat_id_) == "open" then
 local Textbrj = text:match("^برج (.*)$")
-gk = https.request('https://forhassan.ml/black/abraj.php?br='..URL.escape(Textbrj)..'')
+gk = https.request('https://forhassan.ml/Black/br.php?br='..URL.escape(Textbrj)..'')
 br = JSON.decode(gk)
 i = 0
 for k,v in pairs(br.ok) do
@@ -7127,7 +7127,7 @@ database:set(bot_id.."EGYBOTSS:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.."EGYBOTSS:age_Bots"..msg.chat_id_) == "open" then
 local Textage = text:match("^احسب (.*)$")
-ge = https.request('https://forhassan.ml/black/age.php?age='..URL.escape(Textage)..'')
+ge = https.request('https://forhassan.ml/Black/?age='..URL.escape(Textage)..'')
 ag = JSON.decode(ge)
 i = 0
 for k,v in pairs(ag.ok) do
@@ -7146,7 +7146,7 @@ database:set(bot_id.."EGYBOTSS:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."EGYBOTSS:insta_bot"..msg.chat_id_) == "open" then
 local Textni = text:match("^معلومات (.*)$")
-innn = https.request('https://forhassan.ml/black/insta.php?user='..URL.escape(Textni)..'')
+innn = https.request('https://forhassan.ml/Black/insta.php?user='..URL.escape(Textni)..'')
 fff = JSON.decode(innn)
 i = 0
 for k,v in pairs(fff.ok) do
