@@ -7406,7 +7406,7 @@ Text = [[
 
 [⌔︙ DEV .](https://t.me/xb_0b)
 
-[⌔︙ 𝖳WSL Source EGY .](http://t.me/TwSLEGYBot)
+
      
 
 ]]
