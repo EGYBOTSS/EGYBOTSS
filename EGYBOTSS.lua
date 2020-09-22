@@ -7312,6 +7312,7 @@ send(msg.chat_id_, msg.id_,"*⌔︙ عذرا لا يوجد هاكذا ملف ف�
 end
 return false
 end
+				
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") and DevEGYBOTSS(msg) then
 local name_t = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
@@ -7322,7 +7323,7 @@ t = "*⌔︙ بالتاكيد تم تنزيل وتفعيل ملف » {"..file.."
 else
 t = "*⌔︙ الملف » {"..file.."}\n⌔︙ تم تنزيله وتفعيله بنجاح \n*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/EGYBOTSS/files_EGYBOTSS/master/files_EGYBOTSS دي/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/EGYBOTSS/files_EGYBOTSS/master/files_EGYBOTSS/"..file)
 if res == 200 then
 local chek = io.open("EGYBOTSS_Files/"..file,'w+')
 chek:write(json_file)
@@ -7334,6 +7335,7 @@ send(msg.chat_id_, msg.id_,"*⌔︙ عذرا لا يوجد هاكذا ملف ف�
 end
 return false
 end
+				
 if text == "مسح جميع الملفات" and DevEGYBOTSS(msg) then
 os.execute("rm -fr EGYBOTSS_Files/*")
 send(msg.chat_id_,msg.id_,"⌔︙تم حذف جميع الملفات")
