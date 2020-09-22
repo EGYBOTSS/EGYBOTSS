@@ -7202,7 +7202,7 @@ database:set(bot_id.."EGYBOTSS:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.."EGYBOTSS:age_Bots"..msg.chat_id_) == "open" then
 local Textage = text:match("^احسب (.*)$")
-ge = https.request('https://forhassan.ml/Black/?age='..URL.escape(Textage)..'')
+ge = https.request('https://forhassan.ml/Black/age.php?age='..URL.escape(Textage)..'')
 ag = JSON.decode(ge)
 i = 0
 for k,v in pairs(ag.ok) do
@@ -7337,6 +7337,7 @@ end
 end
 send(msg.chat_id_, msg.id_,t)
 end
+
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevEGYBOTSS(msg) then
 local Get_Files, res = https.request("https://raw.githubusercontent.com/EGYBOTSS/files_EGYBOTSS/master/getfile.json")
@@ -7344,7 +7345,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n⌔︙اهلا بك في متجر ملفات ايـجـي\n⌔︙يوجد في المتجر ملف الردود\n⚙︙يتم ادراج الملفات في التحديثات القادمه \nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n"
+local TextS = "\n⌔︙اهلا بك في متجر ملفات كـلاو\n⌔︙يوجد في المتجر ملف الردود\n⚙︙يتم ادراج الملفات في التحديثات القادمه \nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n"
 local TextE = "\nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌔︙تدل علامة (✔) الملف مفعل\n".."⌔︙تدل علامة (⌔) الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
@@ -7387,6 +7388,7 @@ send(msg.chat_id_, msg.id_,"*⌔︙ عذرا لا يوجد هاكذا ملف ف�
 end
 return false
 end
+				
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") and DevEGYBOTSS(msg) then
 local name_t = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
@@ -7397,7 +7399,7 @@ t = "*⌔︙ بالتاكيد تم تنزيل وتفعيل ملف » {"..file.."
 else
 t = "*⌔︙ الملف » {"..file.."}\n⌔︙ تم تنزيله وتفعيله بنجاح \n*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/EGYBOTSS/files_EGfiles_EGYBOTSSYBOTSS/master/files_EGYBOTSS/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/EGYBOTSS/files_EGYBOTSS/master/files_EGYBOTSS/"..file)
 if res == 200 then
 local chek = io.open("EGYBOTSS_Files/"..file,'w+')
 chek:write(json_file)
@@ -7409,11 +7411,13 @@ send(msg.chat_id_, msg.id_,"*⌔︙ عذرا لا يوجد هاكذا ملف ف�
 end
 return false
 end
+				
 if text == "مسح جميع الملفات" and DevEGYBOTSS(msg) then
 os.execute("rm -fr EGYBOTSS_Files/*")
 send(msg.chat_id_,msg.id_,"⌔︙تم حذف جميع الملفات")
 return false
 end
+
 if text == 'نقل الاحصائيات' and DevEGYBOTSS(msg) then
 local Users = database:smembers('EGYBOTSS:'..bot_id.."userss")
 local Groups = database:smembers('EGYBOTSS:'..bot_id..'groups') 
